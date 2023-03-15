@@ -6,9 +6,9 @@ public final class Endpoints {
     };
 
     public static final String[] SECURED_ENDPOINT_USER = {
-            "/library/delete/{id}"
+            "/library/delete/{id}", "/library/{id}"
     };
     public static final String[] UNSECURED_ENDPOINT = {
-            "/users/**"
+            "/users/**", "/auth/**"
     };
 }

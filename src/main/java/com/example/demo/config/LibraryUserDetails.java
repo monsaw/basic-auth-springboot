@@ -21,14 +21,14 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class LibraryUserDetails implements UserDetails {
 
-    private String email;
     private String password;
+
     private String username;
 
     private List<GrantedAuthority> authorities;
 
     public LibraryUserDetails(Users users){
-        username = users.getUsername();
+        username = users.getEmail();
         password = users.getPassword();
         authorities = Arrays.stream(users.getRoles().split(",")).
                 map(SimpleGrantedAuthority::new).collect(Collectors.toList());
